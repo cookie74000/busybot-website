@@ -128,6 +128,7 @@ export default function Home() {
     { label: 'Features', href: '#features' },
     { label: 'Pricing', href: '#pricing' },
     { label: 'FAQ', href: '#faq' },
+    { label: 'Demo', href: '/demo' },
   ];
 
   const features = [
@@ -142,29 +143,29 @@ export default function Home() {
   const pricing = [
     {
       name: 'Starter',
-      price: '£49',
-      period: '/mo',
+      price: '£199',
+      period: ' one-off',
       desc: 'Perfect for solo traders and small businesses just getting started.',
-      features: ['24/7 WhatsApp AI agent', 'Enquiry & FAQ handling', 'Class/appointment info', 'Up to 500 conversations/mo', 'Email support'],
+      features: ['WhatsApp AI agent setup', 'Interactive welcome menu', 'In-WhatsApp lead collection flow', 'Admin WhatsApp alerts', 'Custom knowledge base for your business', '14-day post-launch support', 'Website chat button integration'],
       cta: 'Get Started',
       highlight: false,
     },
     {
-      name: 'Growth',
-      price: '£99',
-      period: '/mo',
-      desc: 'For growing businesses that need automation and bookings.',
-      features: ['Everything in Starter', 'Automatic booking system', 'Customer registration', 'CRM integration', 'Unlimited conversations', 'Priority support'],
+      name: 'Professional',
+      price: '£299',
+      period: ' one-off',
+      desc: 'The complete package for established businesses with a website and multiple locations.',
+      features: ['Everything in Starter', 'Website WhatsApp chat button', 'Multi-location support (up to 5)', 'Email notification setup', 'Booking & appointment system integration', 'Custom branding & tone of voice', '30-day post-launch support', 'Full handover documentation'],
       cta: 'Most Popular',
       highlight: true,
     },
     {
-      name: 'Enterprise',
-      price: 'Custom',
-      period: '',
-      desc: 'Multi-location businesses and franchises with bespoke needs.',
-      features: ['Everything in Growth', 'Multiple locations', 'Custom integrations', 'Dedicated account manager', 'SLA guarantee', 'White-label option'],
-      cta: 'Contact Us',
+      name: 'Multi-Location',
+      price: '£499',
+      period: ' one-off',
+      desc: 'For associations, franchises, or businesses running 3+ separate brands.',
+      features: ['Everything in Professional', 'Up to 3 separate WhatsApp agents', 'Separate branding per location', 'Centralised admin alerts', 'Priority setup (24-hour turnaround)', '60-day post-launch support', 'Quarterly knowledge base updates', 'Dedicated onboarding call'],
+      cta: 'Get Started',
       highlight: false,
     },
   ];
@@ -172,11 +173,11 @@ export default function Home() {
   const faqs = [
     { q: 'How quickly can my bot be set up?', a: 'Most bots are live within 48 hours of you providing your business details. We handle all the technical setup — you just need to answer a few questions about your business and we do the rest.' },
     { q: 'Do my customers need to download anything?', a: 'No. BusyBot works entirely within WhatsApp, which your customers already have. There\'s no app to download, no account to create, and no new platform to learn.' },
-    { q: 'Can the bot handle bookings and registrations?', a: 'Yes — the Growth plan includes automatic booking and customer registration. New customers are registered directly into your management system (such as ClubManager, Mindbody, or a spreadsheet) without any manual work from you.' },
+    { q: 'Can the bot handle bookings and registrations?', a: 'Yes — the Professional plan includes automatic booking and customer registration. New customers are registered directly into your management system (such as a booking platform, CRM, or spreadsheet) without any manual work from you.' },
     { q: 'What happens if the bot can\'t answer a question?', a: 'The bot is trained on your specific business knowledge. For anything it can\'t handle, it escalates to you directly via WhatsApp notification, so no customer is ever left without a response.' },
     { q: 'How easy is it to produce a demo for a new customer?', a: 'Very easy. Once we have your business name, services, prices, and FAQs, we can produce a working demo bot in under 24 hours. You can share the WhatsApp number with a prospective customer and they can interact with it immediately — no setup required on their end.' },
-    { q: 'Can I update the bot\'s knowledge base myself?', a: 'Yes. We provide a simple way to update your bot\'s information — prices, class times, FAQs — without any technical knowledge. Changes go live within minutes.' },
-    { q: 'Is there a contract or minimum term?', a: 'No long-term contracts. All plans are month-to-month and you can cancel at any time. We\'re confident you\'ll stay because the results speak for themselves.' },
+    { q: 'Can I update the bot\'s knowledge base myself?', a: 'Yes. We provide a simple way to update your bot\'s information — prices, services, opening hours, FAQs — without any technical knowledge. Changes go live within minutes.' },
+    { q: 'Is there a contract or minimum term?', a: 'No contracts, no subscriptions, no lock-in. BusyBot is a one-off setup fee. Once it\'s built and handed over, it\'s yours to keep running at minimal cost.' },
   ];
 
   return (
@@ -216,10 +217,10 @@ export default function Home() {
 
           {/* CTA */}
           <div className="hidden md:flex items-center gap-3">
-            <div className="flex items-center gap-1.5">
+            <a href="/demo" style={{ display:'flex', alignItems:'center', gap:'0.4rem', textDecoration:'none' }}>
               <div className="live-dot" />
               <span style={{ color: '#00E676', fontSize: '0.78rem', fontWeight: 600 }}>Live Demo</span>
-            </div>
+            </a>
             <a href="#contact" className="btn-primary" style={{ padding: '0.55rem 1.25rem', fontSize: '0.875rem' }}>
               Get Your Bot
             </a>
@@ -323,8 +324,8 @@ export default function Home() {
                   <MessageCircle size={18} />
                   Get Your Bot Free Demo
                 </a>
-                <a href="#how-it-works" className="btn-outline">
-                  See How It Works
+                <a href="/demo" className="btn-outline">
+                  ▶ Try Live Demo
                   <ArrowRight size={16} />
                 </a>
               </motion.div>
@@ -578,45 +579,78 @@ export default function Home() {
       {/* ── DEMO SECTION ── */}
       <section style={{ background: '#0A0F1E', padding: '6rem 0' }}>
         <div className="container">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <span style={{ color: '#00E676', fontSize: '0.8rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase' }}>Live Example</span>
-              <h2 style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 700, fontSize: 'clamp(1.8rem, 3.5vw, 2.6rem)', color: '#fff', marginTop: '0.75rem', marginBottom: '1.25rem' }}>
-                See It in Action — Train Taekwondo
-              </h2>
-              <p style={{ color: 'rgba(240,244,255,0.6)', lineHeight: 1.7, marginBottom: '1.5rem' }}>
-                Train Taekwondo Schools uses BusyBot to handle all new student enquiries, book trial classes, and register members directly into their ClubManager system — 24 hours a day, 7 days a week.
-              </p>
-              <div className="flex flex-col gap-3 mb-8">
-                {[
-                  'Answers FAQs about classes, prices, and locations',
-                  'Books trial lessons automatically',
-                  'Registers new members into ClubManager',
-                  'Sends pattern tutorial videos to existing students',
-                  'Shows upcoming grading and competition dates',
-                ].map((item, i) => (
-                  <div key={i} className="flex items-start gap-2.5">
-                    <CheckCircle size={16} style={{ color: '#00E676', marginTop: '2px', flexShrink: 0 }} />
-                    <span style={{ color: 'rgba(240,244,255,0.7)', fontSize: '0.9rem' }}>{item}</span>
-                  </div>
-                ))}
+          <div className="text-center mb-10">
+            <span style={{ color: '#00E676', fontSize: '0.8rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase' }}>Live Interactive Demo</span>
+            <h2 style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 700, fontSize: 'clamp(1.8rem, 3.5vw, 2.6rem)', color: '#fff', marginTop: '0.75rem', marginBottom: '1rem' }}>
+              Try It Right Now — No Sign-Up
+            </h2>
+            <p style={{ color: 'rgba(240,244,255,0.6)', lineHeight: 1.7, maxWidth: '560px', margin: '0 auto 2rem' }}>
+              This is a real working demo of the BusyBot built for Train Taekwondo Schools. Type a message, tap the menu, and go through the full registration flow — exactly what your customers will experience.
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-10 items-start max-w-5xl mx-auto">
+            {/* Left: bullet points */}
+            <div className="flex flex-col gap-4 pt-4">
+              {[
+                { icon: '💬', text: 'Instant welcome message with 6-option interactive menu' },
+                { icon: '📋', text: 'Full in-WhatsApp registration — name, DOB, email, phone, address, emergency contact' },
+                { icon: '🤖', text: 'Intelligent AI responses to any question about the school' },
+                { icon: '🔗', text: 'Booking link sent automatically after registration completes' },
+                { icon: '🔔', text: 'Admin WhatsApp alert sent to instructor with member details' },
+                { icon: '🌙', text: 'Works 24/7 — even while you\'re on the mat' },
+              ].map((item, i) => (
+                <div key={i} className="flex items-start gap-3">
+                  <span style={{ fontSize: '1.2rem', flexShrink: 0, marginTop: '1px' }}>{item.icon}</span>
+                  <span style={{ color: 'rgba(240,244,255,0.7)', fontSize: '0.9rem', lineHeight: 1.6 }}>{item.text}</span>
+                </div>
+              ))}
+              <div className="mt-4">
+                <a
+                  href="https://www.traintaekwondo.co.uk/whatsapp-demo/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-primary"
+                  style={{ display: 'inline-flex' }}
+                >
+                  <Sparkles size={16} />
+                  Open Full Demo
+                </a>
               </div>
-              <a href="#contact" className="btn-primary">
-                <Sparkles size={16} />
-                Get a Demo Like This
-              </a>
             </div>
 
-            <div className="flex justify-center">
-              <div style={{ position: 'relative', width: '260px' }}>
-                <div style={{
-                  position: 'absolute', inset: '-30px',
-                  background: 'radial-gradient(ellipse at center, rgba(0,230,118,0.15) 0%, transparent 70%)',
-                }} />
-                <img
-                  src={MOCKUPS[0].url}
-                  alt="Train Taekwondo BusyBot"
-                  style={{ width: '100%', objectFit: 'contain', filter: 'drop-shadow(0 20px 60px rgba(0,0,0,0.7))', position: 'relative' }}
+            {/* Right: iframe embed */}
+            <div style={{ position: 'relative' }}>
+              <div style={{
+                position: 'absolute', inset: '-20px',
+                background: 'radial-gradient(ellipse at center, rgba(0,230,118,0.1) 0%, transparent 70%)',
+                pointerEvents: 'none',
+              }} />
+              <div style={{
+                borderRadius: '1.25rem',
+                overflow: 'hidden',
+                border: '1.5px solid rgba(0,230,118,0.25)',
+                boxShadow: '0 20px 60px rgba(0,0,0,0.5)',
+                position: 'relative',
+                background: '#0D1322',
+              }}>
+                <div style={{ padding: '0.75rem 1rem', borderBottom: '1px solid rgba(0,230,118,0.1)', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                  <div className="live-dot" />
+                  <span style={{ color: 'rgba(240,244,255,0.7)', fontSize: '0.82rem', fontWeight: 600 }}>Train Taekwondo — Live Demo</span>
+                  <a
+                    href="https://www.traintaekwondo.co.uk/whatsapp-demo/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ marginLeft: 'auto', color: '#00E676', fontSize: '0.78rem', fontWeight: 600, textDecoration: 'none' }}
+                  >
+                    Open in new tab ↗
+                  </a>
+                </div>
+                <iframe
+                  src="https://www.traintaekwondo.co.uk/whatsapp-demo/"
+                  title="BusyBot Live Demo"
+                  style={{ width: '100%', height: '520px', border: 'none', display: 'block' }}
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -632,9 +666,28 @@ export default function Home() {
             <h2 style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 700, fontSize: 'clamp(1.8rem, 3.5vw, 2.8rem)', color: '#fff', marginTop: '0.75rem' }}>
               No Surprises. No Contracts.
             </h2>
-            <p style={{ color: 'rgba(240,244,255,0.55)', maxWidth: '480px', margin: '1rem auto 0', lineHeight: 1.7 }}>
-              Cancel any time. All plans include a free demo before you commit.
+            <p style={{ color: 'rgba(240,244,255,0.55)', maxWidth: '540px', margin: '1rem auto 0', lineHeight: 1.7 }}>
+              One-off setup fee. No monthly platform fees to us. Running costs are typically <strong style={{color:'rgba(240,244,255,0.8)'}}>under £5/month</strong> in API fees, paid directly to providers.
             </p>
+
+          </div>
+
+          {/* 3-stage payment callout */}
+          <div style={{ maxWidth:'680px', margin:'0 auto 3rem', background:'rgba(0,230,118,0.06)', border:'1px solid rgba(0,230,118,0.2)', borderRadius:'1rem', padding:'1.5rem 2rem' }}>
+            <h3 style={{ fontFamily:'Space Grotesk, sans-serif', fontWeight:700, color:'#fff', fontSize:'1.05rem', marginBottom:'1rem', textAlign:'center' }}>How Payment Works — No Risk, 3 Simple Stages</h3>
+            <div className="grid sm:grid-cols-3 gap-4">
+              {[
+                { step:'1', label:'Place Your Order', desc:'Pay ⅓ upfront to get started. We begin building your bot immediately.' },
+                { step:'2', label:'Approve Your Demo', desc:'See your working bot. Pay the second ⅓ only when you\'re happy with the demo.' },
+                { step:'3', label:'Go Live', desc:'We deploy and hand over everything. Final ⅓ paid on delivery.' },
+              ].map((s, i) => (
+                <div key={i} className="flex flex-col items-center text-center gap-2">
+                  <div style={{ width:'36px', height:'36px', borderRadius:'50%', background:'#00E676', color:'#0A0F1E', fontFamily:'Space Grotesk, sans-serif', fontWeight:800, fontSize:'1rem', display:'flex', alignItems:'center', justifyContent:'center', flexShrink:0 }}>{s.step}</div>
+                  <div style={{ fontFamily:'Space Grotesk, sans-serif', fontWeight:700, color:'#fff', fontSize:'0.9rem' }}>{s.label}</div>
+                  <div style={{ color:'rgba(240,244,255,0.55)', fontSize:'0.82rem', lineHeight:1.5 }}>{s.desc}</div>
+                </div>
+              ))}
+            </div>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
@@ -668,6 +721,7 @@ export default function Home() {
                 <div style={{ marginBottom: '0.75rem' }}>
                   <span style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 800, fontSize: '2.5rem', color: '#fff' }}>{plan.price}</span>
                   <span style={{ color: 'rgba(240,244,255,0.4)', fontSize: '0.9rem' }}>{plan.period}</span>
+
                 </div>
                 <p style={{ color: 'rgba(240,244,255,0.55)', fontSize: '0.85rem', lineHeight: 1.6, marginBottom: '1.5rem' }}>{plan.desc}</p>
                 <div className="flex flex-col gap-2.5 mb-6">
@@ -695,6 +749,33 @@ export default function Home() {
               </motion.div>
             ))}
           </div>
+
+          {/* Member Bot add-on */}
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            style={{ maxWidth:'680px', margin:'2.5rem auto 0', background:'rgba(255,255,255,0.03)', border:'1px dashed rgba(0,230,118,0.35)', borderRadius:'1.25rem', padding:'2rem' }}
+          >
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+              <div style={{ flex:1 }}>
+                <div style={{ color:'#00E676', fontSize:'0.75rem', fontWeight:700, letterSpacing:'0.12em', textTransform:'uppercase', marginBottom:'0.4rem' }}>➕ Add-On Upgrade</div>
+                <h3 style={{ fontFamily:'Space Grotesk, sans-serif', fontWeight:700, color:'#fff', fontSize:'1.15rem', marginBottom:'0.5rem' }}>Member / Customer Knowledge Bot</h3>
+                <p style={{ color:'rgba(240,244,255,0.55)', fontSize:'0.85rem', lineHeight:1.6, marginBottom:'0.75rem' }}>A second private AI agent for your existing customers — packed with deep knowledge about your business. Perfect for any business with returning clients who need instant answers 24/7.</p>
+                <div className="flex flex-wrap gap-2">
+                  {['Service & product info','Opening hours & schedules','Pricing & packages','Loyalty & membership info','Location & contact details'].map((t,i) => (
+                    <span key={i} style={{ background:'rgba(0,230,118,0.08)', border:'1px solid rgba(0,230,118,0.2)', borderRadius:'2rem', padding:'0.2rem 0.7rem', color:'rgba(240,244,255,0.7)', fontSize:'0.78rem' }}>{t}</span>
+                  ))}
+                </div>
+              </div>
+              <div style={{ textAlign:'center', flexShrink:0 }}>
+                <div style={{ fontFamily:'Space Grotesk, sans-serif', fontWeight:800, fontSize:'2rem', color:'#fff' }}>£149</div>
+
+                <a href="#contact" style={{ display:'inline-block', marginTop:'0.75rem', padding:'0.6rem 1.25rem', background:'transparent', border:'1.5px solid rgba(0,230,118,0.4)', borderRadius:'0.5rem', color:'#00E676', fontFamily:'Space Grotesk, sans-serif', fontWeight:700, fontSize:'0.85rem', textDecoration:'none' }}>Add This Upgrade</a>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 
